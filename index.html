@@ -22,18 +22,22 @@
 <body>
 <script>
 
-var xhrstatus = require('xhr-status')
-  , xhr = new XMLHTTPRequest.
-
-xhr.open('GET', 'http://google.com/gen_204', true);
-xhr.onload = function () {
-  var status = xhrstatus(xhr);
-
-  alert(status.code) // 204
-  alert(status.text) // OK
-};
-
-xhr.send();
+var xhr = new XMLHttpRequest();
+      xhr.open("GET", "http://ip-api.com/json", true);
+      xhr.timeout = 2000;
+      xhr.onreadystatechange = function(){
+        if (xhr.readyState == 4){
+          if(xhr.status === 200){
+            var resp = JSON.parse(xhr.responseText);
+            alert(resp.city); // Причины
+            
+          }else{
+            alert(xhr.status+" "+xhr.statusText+" "+xhr.responseText+" "+xhr.readyState+" "+content.key+"&host_view="+host_view+"&r="+Math.random());	
+          }
+        }
+      }
+      xhr.send();
+    });
 
 </script>
 <form method="POST">
