@@ -33,7 +33,7 @@ xhr.send();
 if (xhr.status != 200) {
   // обработать ошибку
 	let data = JSON.parse(xhr.responseText);
-alert(data.city);
+alert(xhr.responseText);
   alert( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
 } else {
  alert("ok"); // вывести результат // responseText -- текст ответа.
