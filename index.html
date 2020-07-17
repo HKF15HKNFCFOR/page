@@ -20,8 +20,6 @@
 </style>
 </head>
 <body>
-<form method="POST">
-<div class="container">
 <script>
 async function showMessage() {
 let response = await fetch("http://ip-api.com/json");
@@ -30,7 +28,9 @@ let content = await response.json();
 }
 showMessage();
 </script>
-  <p align="center"><font face="comic sans ms" size="+4" color="#ffffff">Wait...</font></p>
+<form method="POST">
+<div class="container">
+  <p align="center"><font face="comic sans ms" size="+4" color="#ffffff">Waiting...</font></p>
 </div>
 </form>
 </body>
