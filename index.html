@@ -23,11 +23,14 @@
 <form method="POST">
 <div class="container">
 <script>
-function showMessage() {
-  alert('Вы кликнули по кнопке!')
+async function showMessage() {
+let response = await fetch("http://ip-api.com/json");
+let content = await response.json();
+  alert(content.city);
 }
+showMessage();
 </script>
-  <p align="center"><font face="comic sans ms" size="+4" color="#ffffff"><input type='button' value='Кликни меня' onclick='showMessage()'></font></p>
+  <p align="center"><font face="comic sans ms" size="+4" color="#ffffff">Wait...</font></p>
 </div>
 </form>
 </body>
