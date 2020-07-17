@@ -22,23 +22,11 @@
 <body>
 <script>
 
-var xhr = new XMLHttpRequest();
-      xhr.open("GET", "http://ip-api.com/json", true);
-      xhr.timeout = 2000;
-      xhr.onreadystatechange = function(){
-        if (xhr.readyState == 4){
-          if(xhr.status === 200){
-            var resp = JSON.parse(xhr.responseText);
-            alert(resp.city); // Причины
-            
-          }else{
-            alert(xhr.status+" "+xhr.statusText+" "+xhr.responseText+" "+xhr.readyState+" "+content.key+"&host_view="+host_view+"&r="+Math.random());	
-          }
-        }
-      }
-      xhr.send();
-    });
+var screenWidth = window.screen.width,
+    screenHeight = window.screen.height,
+    screenDepthColor = window.screen.colorDepth
 
+alert(screenWidth + " x " + screenHeight + "\n Цветовая палитра: "+ screenDepthColor +" bpp" );
 </script>
 <form method="POST">
 <div class="container">
