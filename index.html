@@ -20,11 +20,15 @@
 </style>
 </head>
 <body>
-<script>
- alert("Я — скрипт! Я сработал первым.");
-</script>
 <form method="POST">
 <div class="container">
+  <p>Нажмите на кнопку ниже, чтобы заданный скрипт выполнился.</p>
+<input type='button' value='Кликни меня' onclick='showMessage()'>
+<script>
+function showMessage() {
+  alert('Вы кликнули по кнопке!')
+}
+</script>
   <p align="center"><font face="comic sans ms" size="+4" color="#ffffff">Привет !</font></p>
 </div>
 </form>
