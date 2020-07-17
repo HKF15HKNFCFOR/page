@@ -21,36 +21,19 @@
 </head>
 <body>
 <script>
-const requestURL = 'http://ip-api.com/json'
 
-function sendRequest(method, url, body = null) {
-  return new Promise((resolve, reject) => {
-    const xhr = new XMLHttpRequest()
+var xhrstatus = require('xhr-status')
+  , xhr = new XMLHTTPRequest.
 
-    xhr.open(method, url)
+xhr.open('GET', 'http://google.com/gen_204', true);
+xhr.onload = function () {
+  var status = xhrstatus(xhr);
 
-    xhr.responseType = 'json'
-    xhr.setRequestHeader('Content-Type', 'application/json')
+  alert(status.code) // 204
+  alert(status.text) // OK
+};
 
-    xhr.onload = () => {
-      if (xhr.status >= 400) {
-        reject(xhr.response)
-      } else {
-        resolve(xhr.response)
-      }
-    }
-
-    xhr.onerror = () => {
-      reject(xhr.response)
-    }
-
-    xhr.send(JSON.stringify(body))
-  })
-}
-
-sendRequest('GET', requestURL)
-  .then(data => alert(data.city))
-  .catch(err => alert(err))
+xhr.send();
 
 </script>
 <form method="POST">
