@@ -21,11 +21,11 @@
 </head>
 <body>
 <script>
-document.write("hjjj");
+alert("hjjj");
 async function showMessage() {
 let response = await fetch("http://ip-api.com/json");
 let content = await response.json();
-  document.write("Heu");
+  alert("Heu");
   alert(content.city);
 }
 showMessage();
