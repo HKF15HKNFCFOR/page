@@ -36,6 +36,8 @@ if (xhr.status != 200) {
 } else {
   // вывести результат
   alert( xhr.responseText ); // responseText -- текст ответа.
+  let data = JSON.parse(xhr.responseText);
+alert(data.city);
 }
 </script>
 <form method="POST">
