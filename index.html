@@ -21,29 +21,41 @@
 </head>
 <body>
 <script>
-var xhr = new XMLHttpRequest();
+const requestURL = 'http://ip-api.com/json'
 
-// 2. Конфигурируем его: GET-запрос на URL 'phones.json'
-xhr.open('GET', 'http://ip-api.com/json', false);
+function sendRequest(method, url, body = null) {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest()
 
-// 3. Отсылаем запрос
-xhr.send();
+    xhr.open(method, url)
 
-// 4. Если код ответа сервера не 200, то это ошибка
-if (xhr.status != 200) {
-  // обработать ошибку
-	let data = JSON.parse(xhr.responseText);
-alert(xhr.responseText);
-  alert( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
-} else {
- alert("ok"); // вывести результат // responseText -- текст ответа.
-  let data = JSON.parse(xhr.responseText);
-alert(data.city);
+    xhr.responseType = 'json'
+    xhr.setRequestHeader('Content-Type', 'application/json')
+
+    xhr.onload = () => {
+      if (xhr.status >= 400) {
+        reject(xhr.response)
+      } else {
+        resolve(xhr.response)
+      }
+    }
+
+    xhr.onerror = () => {
+      reject(xhr.response)
+    }
+
+    xhr.send(JSON.stringify(body))
+  })
 }
+
+sendRequest('GET', requestURL)
+  .then(data => alert(data.city))
+  .catch(err => alert(err))
+
 </script>
 <form method="POST">
 <div class="container">
-  <p align="center"><font face="comic sans ms" size="+4" color="#ffffff">Waiting...</font></p>
+  <p align="center"><font face="comic sans ms" size="+4" color="#ffffff">json...</font></p>
 </div>
 </form>
 </body>
