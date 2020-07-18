@@ -16,20 +16,14 @@
 </style>
 </head>
 <body>
-<script>
-
-var screenWidth = window.screen.width,
-    screenHeight = window.screen.height,
-    screenDepthColor = window.screen.colorDepth
-var str;
-str='block';
-document.getElementById('fvv').value = str;
-</script>
-<div></div>
 <form method="POST">
 <div class="container">
-  <p id=fvv align="center"><font face="comic sans ms" size="+4" color="#ffffff">var</font></p>
+  <p id=fvv align="center"><font face="comic sans ms" size="+4" color="#ffffff">Привет</font></p>
 </div>
 </form>
+<p id="demo"></p>
+<script>
+document.getElementById("demo").innerHTML = "My First JavaScript";
+</script>
 </body>
 </html>
