@@ -18,12 +18,22 @@
 <body>
 <form method="POST">
 <div class="container">
-  <font face="comic sans ms" size="+4" color="#ffffff"><p id=datee align="center"></p></font>
+  <font face="comic sans ms" size="+4" color="#ffffff"><p id=datee align="center">j</p></font>
 </div>
 </form>
 <script>
-var now = new Date();
-alert( now );
+var date = new Date();   
+var options = {   
+	year: 'numeric',   
+	month: 'long',    
+	day: 'numeric',  
+	weekday: 'long',   
+	timezone: 'UTC',   
+	hour: 'numeric',   
+	minute: 'numeric',  
+	second: 'numeric',
+};   
+	alert(date.toLocaleString('ru',options));
 </script>
 </body>
 </html>
