@@ -18,7 +18,7 @@
 <body>
 <form method="POST">
 <div class="container">
-  <font face="comic sans ms" size="+4" color="#ffffff"><p id=datee align="center">j</p></font>
+  <font face="comic sans ms" size="+4" color="#ffffff"><p id=datee align="center">kk</p></font>
 </div>
 </form>
 <script>
@@ -33,7 +33,7 @@ var options = {
 	minute: 'numeric',  
 	second: 'numeric',
 };   
-	alert(date.toLocaleString('ru',options));
+	document.getElementById("datee").innerHTML = date.toLocaleString('ru',options);
 </script>
 </body>
 </html>
