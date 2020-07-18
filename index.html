@@ -22,6 +22,7 @@
 </div>
 </form>
 <script>
+function clock_2(){
 var date = new Date();   
 var options = {   
 	year: 'numeric',   
@@ -34,6 +35,8 @@ var options = {
 	second: 'numeric'
 };   
 	document.getElementById("datee").innerHTML = date.toLocaleString('ru',options);
+   setTimeout("clock_2()", 1000);
+};
 </script>
 </body>
 </html>
