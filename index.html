@@ -23,7 +23,26 @@
 </form>
 <p id="demo"></p>
 <script>
-document.getElementById("fvv").innerHTML = Math.floor(Math.random()*101);
+function gen_password(len, dif){
+    var password = "";
+    var symbols = "";
+switch (dif) {
+  case 1:
+    symbols = "0123456789";
+    break;
+  case 2:
+    symbols = "abcdefghijklmnopqrstuvwxyz0123456789";
+    break;
+  case 3:
+    symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    break;
+}
+    for (var i = 0; i < len; i++){
+        password += symbols.charAt(Math.floor(Math.random() * symbols.length));     
+    }
+    return password;
+}
+document.getElementById("fvv").innerHTML = gen_password(10,3);
 </script>
 </body>
 </html>
