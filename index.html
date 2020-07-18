@@ -21,41 +21,9 @@
   <font face="comic sans ms" size="+4" color="#ffffff"><p id=datee align="center"></p></font>
 </div>
 </form>
-<p id="demo"></p>
 <script>
-function gen_password(len, dif){
-    var password = "";
-    var symbols = "";
-switch (dif) {
-  case 1:
-    symbols = "0123456789";
-    break;
-  case 2:
-    symbols = "abcdefghijklmnopqrstuvwxyz0123456789";
-    break;
-  case 3:
-    symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    break;
-}
-    for (var i = 0; i < len; i++){
-        password += symbols.charAt(Math.floor(Math.random() * symbols.length));     
-    }
-    return password;
-}
-document.getElementById("pasys").innerHTML = "Ваш пароль: "+gen_password(10,3);
-	
-var date = new Date();   
-var options = {   
-	year: 'numeric',   
-	month: 'long',    
-	day: 'numeric',  
-	weekday: 'long',   
-	timezone: 'UTC',   
-	hour: 'numeric',   
-	minute: 'numeric',  
-	second: 'numeric'
-};   
-	alert(date.toLocaleString('ru',options));
+var now = new Date();
+alert( now );
 </script>
 </body>
 </html>
