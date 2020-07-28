@@ -12,7 +12,27 @@ body{
 flex-direction: column;
     min-height: 100vh;
     background: url("background.png");
+    max-width: 1320px;
 }
+@media (max-width: 576px) {
+   .wrapper {
+      width: 100%;
+    }
+    .sec-1 {
+       background-size: cover;
+    }
+    .sec-2 {
+        margin-left: 40%;
+    }
+    .sec-1 .center {
+        margin-left: -140px;
+        left: 50%;
+    }
+    .item-2 {
+        margin: 0 auto;
+    }
+}
+
 .text {
 color: white;
     padding: 20px 20px;
