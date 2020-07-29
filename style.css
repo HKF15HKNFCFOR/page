@@ -20,6 +20,8 @@ color: white;
     padding: 20px 20px;
 vertical-align:top;
     text-align: center;
+    max-width: 100%; 
+height: auto;
 }
 .text {
 color: white;
